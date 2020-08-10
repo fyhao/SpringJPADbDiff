@@ -24,19 +24,21 @@ public class DBDiff {
 		this.path = path;
 		this.sourceCommit = sourceCommit;
 		this.targetCommit = targetCommit;
+		
 		prop = new Properties();
 		try {
 			prop.load(new FileInputStream("dev.properties"));
-		} catch (IOException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
 	
 	public void analyze() {
+		if(prop == null) return;
 		String env = prop.getProperty("env");
 		log.info("analyze env " + env);
-		if(env.equals("dev")) {
+		if(env != null && env.equals("dev")) {
 			
 		}
 	}
