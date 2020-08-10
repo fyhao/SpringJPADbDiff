@@ -1,7 +1,7 @@
 package com.fyhao.springjpadbdiff.dbdiff;
 
+import java.io.File;
 import java.io.FileInputStream;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
@@ -27,6 +27,7 @@ public class DBDiff {
 		
 		prop = new Properties();
 		try {
+			File file = new File("dev.properties");
 			prop.load(new FileInputStream("dev.properties"));
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
